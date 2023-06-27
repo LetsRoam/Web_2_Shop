@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: blanchedalmond;
+    }
+    
+    h1 {
+      color: black;
+      text-align: center;
+    }
+    
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .left-section {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: green;
+      border: orange solid 2px;
+      height: 650px;
+      overflow: scroll;
+      margin-left: 40px;
+      
+    }
+    
+    .item {
+      flex-basis: calc(33.33% - 20px);
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin: 10px;
+    }
+    
+    .item:hover {
+      transform: scale(1.1);
+    }
+    
+    .item img {
+      width: 100%;
+      height: auto;
+    }
+    
+    
+    .right-section {
+      flex: 2;
+      height: 650px;
+    }
+    
+    .item-image {
+      display: block;
+      width: 90%;
+      height: 650px;
+      border: orange solid 2px;
+      margin-left: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .left-section, .right-section {
+        padding-right: 0;
+      }
+    }
+  </style>
+  <script>
+    function displayImage(event) {
+      var clickedImage = event.target;
+      var itemImage = document.getElementById("item-image");
+      
+      itemImage.src = clickedImage.src;
+    }
+  </script>
+</head>
+<body>
+  <h1>Welcome to My Shop</h1>
+  <div class="container">
+    <div class="left-section">
+      <div class="item" onclick="displayImage(event)">
+        <img src="Black.webp" alt="BLACK">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="White.webp" alt="WHITE">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="Wine.webp" alt="WHITE">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="Dark Grey.webp" alt="DARK GREY">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="Dusty Blue.webp" alt="DUSTY BLUE">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="Yellow.webp" alt="YELLOW">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="Green.webp" alt="GREEN">
+      </div>
+      <div class="item" onclick="displayImage(event)">
+        <img src="Blue Green.webp" alt="BLUE GREEN">
+      </div>
+    </div>
+    <div class="right-section">
+      <img id="item-image" class="item-image" src="collection.jpeg" alt="T-Shirt 1">
+    </div>
+  </div>
+</body>
+</html>
